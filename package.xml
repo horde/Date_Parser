@@ -16,7 +16,7 @@
   <email>jan@horde.org</email>
   <active>yes</active>
  </lead>
- <date>2016-07-12</date>
+ <date>2017-10-17</date>
  <version>
   <release>2.0.7</release>
   <api>1.0.0</api>
@@ -38,7 +38,6 @@
        <dir name="examples">
         <file name="parse.php" role="doc" />
        </dir> <!-- /doc/Horde/Date/Parser/examples -->
-       <file name="COPYING" role="doc" />
        <file name="TODO.txt" role="doc" />
       </dir> <!-- /doc/Horde/Date/Parser -->
      </dir> <!-- /doc/Horde/Date -->
@@ -108,6 +107,7 @@
      </dir> <!-- /test/Horde/Date -->
     </dir> <!-- /test/Horde -->
    </dir> <!-- /test -->
+   <file name="LICENSE" role="doc" />
   </dir> <!-- / -->
  </contents>
  <dependencies>
@@ -154,17 +154,12 @@
  </dependencies>
  <phprelease>
   <filelist>
-   <install as="COPYING" name="doc/Horde/Date/Parser/COPYING" />
-   <install as="TODO.txt" name="doc/Horde/Date/Parser/TODO.txt" />
    <install as="examples/parse.php" name="doc/Horde/Date/Parser/examples/parse.php" />
+   <install as="TODO.txt" name="doc/Horde/Date/Parser/TODO.txt" />
    <install as="Horde/Date/Parser.php" name="lib/Horde/Date/Parser.php" />
    <install as="Horde/Date/Parser/Exception.php" name="lib/Horde/Date/Parser/Exception.php" />
    <install as="Horde/Date/Parser/Handler.php" name="lib/Horde/Date/Parser/Handler.php" />
-   <install as="Horde/Date/Parser/Result.php" name="lib/Horde/Date/Parser/Result.php" />
-   <install as="Horde/Date/Parser/Token.php" name="lib/Horde/Date/Parser/Token.php" />
    <install as="Horde/Date/Parser/Locale/Base.php" name="lib/Horde/Date/Parser/Locale/Base.php" />
-   <install as="Horde/Date/Parser/Locale/De.php" name="lib/Horde/Date/Parser/Locale/De.php" />
-   <install as="Horde/Date/Parser/Locale/Pt.php" name="lib/Horde/Date/Parser/Locale/Pt.php" />
    <install as="Horde/Date/Parser/Locale/Base/Grabber.php" name="lib/Horde/Date/Parser/Locale/Base/Grabber.php" />
    <install as="Horde/Date/Parser/Locale/Base/Ordinal.php" name="lib/Horde/Date/Parser/Locale/Base/Ordinal.php" />
    <install as="Horde/Date/Parser/Locale/Base/Pointer.php" name="lib/Horde/Date/Parser/Locale/Base/Pointer.php" />
@@ -172,6 +167,7 @@
    <install as="Horde/Date/Parser/Locale/Base/Scalar.php" name="lib/Horde/Date/Parser/Locale/Base/Scalar.php" />
    <install as="Horde/Date/Parser/Locale/Base/Separator.php" name="lib/Horde/Date/Parser/Locale/Base/Separator.php" />
    <install as="Horde/Date/Parser/Locale/Base/Timezone.php" name="lib/Horde/Date/Parser/Locale/Base/Timezone.php" />
+   <install as="Horde/Date/Parser/Locale/De.php" name="lib/Horde/Date/Parser/Locale/De.php" />
    <install as="Horde/Date/Parser/Locale/De/Grabber.php" name="lib/Horde/Date/Parser/Locale/De/Grabber.php" />
    <install as="Horde/Date/Parser/Locale/De/Ordinal.php" name="lib/Horde/Date/Parser/Locale/De/Ordinal.php" />
    <install as="Horde/Date/Parser/Locale/De/Pointer.php" name="lib/Horde/Date/Parser/Locale/De/Pointer.php" />
@@ -179,6 +175,7 @@
    <install as="Horde/Date/Parser/Locale/De/Scalar.php" name="lib/Horde/Date/Parser/Locale/De/Scalar.php" />
    <install as="Horde/Date/Parser/Locale/De/Separator.php" name="lib/Horde/Date/Parser/Locale/De/Separator.php" />
    <install as="Horde/Date/Parser/Locale/De/Timezone.php" name="lib/Horde/Date/Parser/Locale/De/Timezone.php" />
+   <install as="Horde/Date/Parser/Locale/Pt.php" name="lib/Horde/Date/Parser/Locale/Pt.php" />
    <install as="Horde/Date/Parser/Locale/Pt/Grabber.php" name="lib/Horde/Date/Parser/Locale/Pt/Grabber.php" />
    <install as="Horde/Date/Parser/Locale/Pt/Ordinal.php" name="lib/Horde/Date/Parser/Locale/Pt/Ordinal.php" />
    <install as="Horde/Date/Parser/Locale/Pt/Pointer.php" name="lib/Horde/Date/Parser/Locale/Pt/Pointer.php" />
@@ -186,15 +183,18 @@
    <install as="Horde/Date/Parser/Locale/Pt/Scalar.php" name="lib/Horde/Date/Parser/Locale/Pt/Scalar.php" />
    <install as="Horde/Date/Parser/Locale/Pt/Separator.php" name="lib/Horde/Date/Parser/Locale/Pt/Separator.php" />
    <install as="Horde/Date/Parser/Locale/Pt/Timezone.php" name="lib/Horde/Date/Parser/Locale/Pt/Timezone.php" />
+   <install as="Horde/Date/Parser/Result.php" name="lib/Horde/Date/Parser/Result.php" />
+   <install as="Horde/Date/Parser/Token.php" name="lib/Horde/Date/Parser/Token.php" />
+   <install as="LICENSE" name="LICENSE" />
    <install as="Horde/Date/Parser/AllTests.php" name="test/Horde/Date/Parser/AllTests.php" />
    <install as="Horde/Date/Parser/bootstrap.php" name="test/Horde/Date/Parser/bootstrap.php" />
    <install as="Horde/Date/Parser/HandlerTest.php" name="test/Horde/Date/Parser/HandlerTest.php" />
+   <install as="Horde/Date/Parser/Locale/BaseTest.php" name="test/Horde/Date/Parser/Locale/BaseTest.php" />
+   <install as="Horde/Date/Parser/Locale/DeTest.php" name="test/Horde/Date/Parser/Locale/DeTest.php" />
    <install as="Horde/Date/Parser/ParserTest.php" name="test/Horde/Date/Parser/ParserTest.php" />
    <install as="Horde/Date/Parser/phpunit.xml" name="test/Horde/Date/Parser/phpunit.xml" />
    <install as="Horde/Date/Parser/ResultTest.php" name="test/Horde/Date/Parser/ResultTest.php" />
    <install as="Horde/Date/Parser/TokenTest.php" name="test/Horde/Date/Parser/TokenTest.php" />
-   <install as="Horde/Date/Parser/Locale/BaseTest.php" name="test/Horde/Date/Parser/Locale/BaseTest.php" />
-   <install as="Horde/Date/Parser/Locale/DeTest.php" name="test/Horde/Date/Parser/Locale/DeTest.php" />
   </filelist>
  </phprelease>
  <changelog>
@@ -438,7 +438,7 @@
    <stability>
     <release>stable</release>
     <api>stable</api></stability>
-   <date>2016-07-12</date>
+   <date>2017-10-17</date>
    <license uri="http://www.horde.org/licenses/lgpl21">LGPL-2.1</license>
    <notes>
 * 
