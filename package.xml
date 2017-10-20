@@ -16,7 +16,7 @@
   <email>jan@horde.org</email>
   <active>yes</active>
  </lead>
- <date>2017-10-17</date>
+ <date>2017-10-20</date>
  <version>
   <release>2.0.7</release>
   <api>1.0.0</api>
@@ -100,7 +100,6 @@
        <file name="bootstrap.php" role="test" />
        <file name="HandlerTest.php" role="test" />
        <file name="ParserTest.php" role="test" />
-       <file name="phpunit.xml" role="test" />
        <file name="ResultTest.php" role="test" />
        <file name="TokenTest.php" role="test" />
       </dir> <!-- /test/Horde/Date/Parser -->
@@ -192,7 +191,6 @@
    <install as="Horde/Date/Parser/Locale/BaseTest.php" name="test/Horde/Date/Parser/Locale/BaseTest.php" />
    <install as="Horde/Date/Parser/Locale/DeTest.php" name="test/Horde/Date/Parser/Locale/DeTest.php" />
    <install as="Horde/Date/Parser/ParserTest.php" name="test/Horde/Date/Parser/ParserTest.php" />
-   <install as="Horde/Date/Parser/phpunit.xml" name="test/Horde/Date/Parser/phpunit.xml" />
    <install as="Horde/Date/Parser/ResultTest.php" name="test/Horde/Date/Parser/ResultTest.php" />
    <install as="Horde/Date/Parser/TokenTest.php" name="test/Horde/Date/Parser/TokenTest.php" />
   </filelist>
@@ -438,7 +436,7 @@
    <stability>
     <release>stable</release>
     <api>stable</api></stability>
-   <date>2017-10-17</date>
+   <date>2017-10-20</date>
    <license uri="http://www.horde.org/licenses/lgpl21">LGPL-2.1</license>
    <notes>
 * 
