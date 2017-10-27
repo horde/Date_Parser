@@ -16,7 +16,7 @@
   <email>jan@horde.org</email>
   <active>yes</active>
  </lead>
- <date>2017-10-20</date>
+ <date>2017-10-27</date>
  <version>
   <release>2.0.7</release>
   <api>1.0.0</api>
@@ -37,6 +37,7 @@
        <dir name="examples">
         <file name="parse.php" role="doc" />
        </dir> <!-- /doc/Horde/Date/Parser/examples -->
+       <file name="CHANGES" role="doc" />
        <file name="TODO.txt" role="doc" />
       </dir> <!-- /doc/Horde/Date/Parser -->
      </dir> <!-- /doc/Horde/Date -->
@@ -152,6 +153,7 @@
  </dependencies>
  <phprelease>
   <filelist>
+   <install as="CHANGES" name="doc/Horde/Date/Parser/CHANGES" />
    <install as="examples/parse.php" name="doc/Horde/Date/Parser/examples/parse.php" />
    <install as="TODO.txt" name="doc/Horde/Date/Parser/TODO.txt" />
    <install as="Horde/Date/Parser.php" name="lib/Horde/Date/Parser.php" />
@@ -435,7 +437,7 @@
    <stability>
     <release>stable</release>
     <api>stable</api></stability>
-   <date>2017-10-20</date>
+   <date>2017-10-27</date>
    <license uri="http://www.horde.org/licenses/lgpl21">LGPL-2.1</license>
    <notes>
    </notes>
