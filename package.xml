@@ -102,7 +102,6 @@
        <file name="bootstrap.php" role="test" />
        <file name="HandlerTest.php" role="test" />
        <file name="ParserTest.php" role="test" />
-       <file name="phpunit.xml" role="test" />
        <file name="ResultTest.php" role="test" />
        <file name="TokenTest.php" role="test" />
       </dir> <!-- /test/Horde/Date/Parser -->
@@ -192,7 +191,6 @@
    <install as="Horde/Date/Parser/bootstrap.php" name="test/Horde/Date/Parser/bootstrap.php" />
    <install as="Horde/Date/Parser/HandlerTest.php" name="test/Horde/Date/Parser/HandlerTest.php" />
    <install as="Horde/Date/Parser/ParserTest.php" name="test/Horde/Date/Parser/ParserTest.php" />
-   <install as="Horde/Date/Parser/phpunit.xml" name="test/Horde/Date/Parser/phpunit.xml" />
    <install as="Horde/Date/Parser/ResultTest.php" name="test/Horde/Date/Parser/ResultTest.php" />
    <install as="Horde/Date/Parser/TokenTest.php" name="test/Horde/Date/Parser/TokenTest.php" />
    <install as="Horde/Date/Parser/Locale/BaseTest.php" name="test/Horde/Date/Parser/Locale/BaseTest.php" />
