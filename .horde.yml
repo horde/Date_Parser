@@ -2,7 +2,7 @@
 id: Date_Parser
 name: Date_Parser
 full: Date parser library
-description: >
+description: >-
   Library for natural-language date parsing, with support for multiple languages
   and locales
 list: dev
