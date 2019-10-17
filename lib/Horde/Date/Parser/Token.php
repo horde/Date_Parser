@@ -74,7 +74,7 @@ class Horde_Date_Parser_Token
             }
         );
         $match = array_shift($matches);
-        return $match[1];
+        return (is_array($match) ? $match[1] : null);
     }
 
     /**
