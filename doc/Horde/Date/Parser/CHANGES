@@ -1,6 +1,9 @@
-----------
-v2.0.7-git
-----------
+------
+v2.0.7
+------
+
+[jan] Fix Trying to access array offset on value of type null (Remi Collet
+      <remi@remirepo.net>, PR #1).
 
 
 ------
