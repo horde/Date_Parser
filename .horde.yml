@@ -2,9 +2,9 @@
 id: Date_Parser
 name: Date_Parser
 full: Date parser library
-description: >-
-  A library for natural-language date parsing, with support for multiple languages
-  and locales.
+description: >
+  A library for natural-language date parsing, with support for multiple
+  languages and locales.
 list: dev
 type: library
 homepage: https://www.horde.org/libraries/Horde_Date_Parser
