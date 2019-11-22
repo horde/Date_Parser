@@ -33,6 +33,13 @@ class Horde_Date_Parser_Handler
         $this->handlerMethod = $handlerMethod;
     }
 
+    /**
+     * @param Horde_Date_Parser_Token[] $tokens
+     * @param Horde_Date_Parser_Handler[][] $definitions
+     *
+     * @return bool
+     * @throws Horde_Date_Parser_Exception
+     */
     public function match($tokens, $definitions)
     {
         $tokenIndex = 0;

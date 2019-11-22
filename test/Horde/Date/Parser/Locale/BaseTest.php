@@ -13,6 +13,16 @@
 class Horde_Date_Parser_Locale_BaseTest extends Horde_Test_Case
 {
     /**
+     * @var Horde_Date
+     */
+    protected $now;
+
+    /**
+     * @var Horde_Date_Parser_Locale_Base
+     */
+    protected $parser;
+
+    /**
      * Wed Aug 16 14:00:00 UTC 2006
      */
     public function setUp()

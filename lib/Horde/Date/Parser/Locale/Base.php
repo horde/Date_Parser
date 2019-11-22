@@ -24,7 +24,11 @@
  */
 class Horde_Date_Parser_Locale_Base
 {
+    /**
+     * @var Horde_Date_Parser_Handler[][]
+     */
     public $definitions = array();
+
     public $args = array();
     public $now;
 
