@@ -3,7 +3,8 @@
  <name>Horde_Date_Parser</name>
  <channel>pear.horde.org</channel>
  <summary>Date parser library</summary>
- <description>A library for natural-language date parsing, with support for multiple languages and locales.</description>
+ <description>A library for natural-language date parsing, with support for multiple languages and locales.
+</description>
  <lead>
   <name>Jan Schneider</name>
   <user>jan</user>
@@ -16,14 +17,14 @@
   <email>chuck@horde.org</email>
   <active>no</active>
  </lead>
- <date>2019-11-22</date>
+ <date>2021-02-24</date>
  <version>
-  <release>2.0.8</release>
-  <api>1.0.0</api>
+  <release>3.0.0alpha1</release>
+  <api>3.0.0alpha1</api>
  </version>
  <stability>
-  <release>stable</release>
-  <api>stable</api>
+  <release>alpha</release>
+  <api>alpha</api>
  </stability>
  <license uri="http://www.horde.org/licenses/lgpl21">LGPL-2.1</license>
  <notes>
@@ -470,14 +471,14 @@
   </release>
   <release>
    <version>
-    <release>2.0.8</release>
-    <api>1.0.0</api>
+    <release>3.0.0alpha1</release>
+    <api>3.0.0alpha1</api>
    </version>
    <stability>
-    <release>stable</release>
-    <api>stable</api>
+    <release>alpha</release>
+    <api>alpha</api>
    </stability>
-   <date>2019-11-22</date>
+   <date>2021-02-24</date>
    <license uri="http://www.horde.org/licenses/lgpl21">LGPL-2.1</license>
    <notes>
 * 
