@@ -1,4 +1,5 @@
 {
+    "minimum-stability": "dev",
     "name": "horde/date_parser",
     "description": "Date parser library",
     "type": "library",
@@ -25,12 +26,12 @@
     ],
     "require": {
         "php": "^7",
-        "horde/date": "^3",
-        "horde/support": "^3",
-        "horde/util": "^3"
+        "horde/date": "^3 || dev-FRAMEWORK_6_0",
+        "horde/support": "^3 || dev-FRAMEWORK_6_0",
+        "horde/util": "^3 || dev-FRAMEWORK_6_0"
     },
     "suggest": {
-        "horde/test": "^3"
+        "horde/test": "^3 || dev-FRAMEWORK_6_0"
     },
     "autoload": {
         "psr-0": {
