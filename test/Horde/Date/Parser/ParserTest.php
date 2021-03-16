@@ -4,15 +4,22 @@
  * @package    Date
  * @subpackage UnitTests
  */
+namespace Horde\Date\Parser;
+use Horde_Test_Case;
+use \Horde_Date;
+use \Horde_Date_Parser;
+use \Horde_Date_Parser_Token;
+use \Horde_Date_Repeater_Time;
+use \Horde_Date_Repeater_DayPortion;
 
 /**
  * @category   Horde
  * @package    Date
  * @subpackage UnitTests
  */
-class Horde_Date_Parser_ParserTest extends Horde_Test_Case
+class ParserTest extends Horde_Test_Case
 {
-    public function setUp()
+    public function setUp(): void
     {
         // Wed Aug 16 14:00:00 UTC 2006
         $this->now = new Horde_Date('2006-08-16 14:00:00');

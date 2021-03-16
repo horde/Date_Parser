@@ -4,13 +4,18 @@
  * @package    Date
  * @subpackage UnitTests
  */
+namespace Horde\Date\Parser\Locale;
+use Horde_Test_Case;
+use \Horde_Date;
+use \Horde_Date_Parser;
+use \Horde_Date_Span;
 
 /**
  * @category   Horde
  * @package    Date
  * @subpackage UnitTests
  */
-class Horde_Date_Parser_Locale_BaseTest extends Horde_Test_Case
+class BaseTest extends Horde_Test_Case
 {
     /**
      * @var Horde_Date
@@ -25,7 +30,7 @@ class Horde_Date_Parser_Locale_BaseTest extends Horde_Test_Case
     /**
      * Wed Aug 16 14:00:00 UTC 2006
      */
-    public function setUp()
+    public function setUp(): void
     {
         $this->now = new Horde_Date('2006-08-16 14:00:00');
         $this->parser = Horde_Date_Parser::factory(array('now' => $this->now));
@@ -721,20 +726,9 @@ class Horde_Date_Parser_Locale_BaseTest extends Horde_Test_Case
 
     public function testArgumentValidation()
     {
-        try {
-            $this->parser->parse('may 27', array('foo' => 'bar'));
-            $this->fail("Should throw InvalidArgumentException");
-        } catch (InvalidArgumentException $e) {
-        } catch (Exception $e) {
-            $this->fail("Should throw InvalidArgumentException, threw " . get_class($e));
-        }
+        $this->expectException('InvalidArgumentException');
 
-        try {
-            $this->parser->parse('may 27', array('context' => 'bar'));
-            $this->fail("Should throw InvalidArgumentException");
-        } catch (InvalidArgumentException $e) {
-        } catch (Exception $e) {
-            $this->fail("Should throw InvalidArgumentException, threw " . get_class($e));
-        }
+        $this->parser->parse('may 27', array('foo' => 'bar'));
+        $this->parser->parse('may 27', array('context' => 'bar'));
     }
 }
