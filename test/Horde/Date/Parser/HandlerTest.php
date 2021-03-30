@@ -4,15 +4,18 @@
  * @package    Date
  * @subpackage UnitTests
  */
+namespace Horde\Date\Parser;
+use Horde_Test_Case;
+use \Horde_Date;
 
 /**
  * @category   Horde
  * @package    Date
  * @subpackage UnitTests
  */
-class Horde_Date_Parser_HandlerTest extends Horde_Test_Case
+class HandlerTest extends Horde_Test_Case
 {
-    public function setUp()
+    public function setUp(): void
     {
         // Wed Aug 16 14:00:00 UTC 2006
         $this->now = new Horde_Date('2006-08-16 14:00:00');
@@ -33,6 +36,7 @@ class Horde_Date_Parser_HandlerTest extends Horde_Test_Case
 
     assert !handler.match(tokens, Chronic.definitions)
         */
+        $this->markTestIncomplete();
     }
 
     public function testHandlerClass2()
@@ -55,6 +59,7 @@ class Horde_Date_Parser_HandlerTest extends Horde_Test_Case
 
     assert !handler.match(tokens, Chronic.definitions)
         */
+        $this->markTestIncomplete();
     }
 
     public function testHandlerClass3()
@@ -72,6 +77,7 @@ class Horde_Date_Parser_HandlerTest extends Horde_Test_Case
 
     assert !handler.match(tokens, Chronic.definitions)
         */
+        $this->markTestIncomplete();
     }
 
     public function testHandlerClass4()
@@ -89,6 +95,7 @@ class Horde_Date_Parser_HandlerTest extends Horde_Test_Case
 
     assert handler.match(tokens, Chronic.definitions)
         */
+        $this->markTestIncomplete();
     }
 
     public function testHandlerClass5()
@@ -111,6 +118,7 @@ class Horde_Date_Parser_HandlerTest extends Horde_Test_Case
 
     assert handler.match(tokens, Chronic.definitions)
         */
+        $this->markTestIncomplete();
     }
 
     public function testHandlerClass6()
@@ -128,5 +136,6 @@ class Horde_Date_Parser_HandlerTest extends Horde_Test_Case
 
     assert handler.match(tokens, Chronic.definitions)
         */
+        $this->markTestIncomplete();
     }
 }
