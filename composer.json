@@ -1,4 +1,5 @@
 {
+    "minimum-stability": "dev",
     "name": "horde/date_parser",
     "description": "Date parser library",
     "type": "library",
