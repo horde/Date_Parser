@@ -22,15 +22,15 @@ class Horde_Date_Parser_TokenTest extends Horde_Test_Case
         $token->tag('foo', 'mytag');
         $this->assertEquals(1, count($token->tags));
         $this->assertTrue($token->tagged());
-        $this->assertInternalType('string', $token->getTag('foo'));
+        $this->assertIsString($token->getTag('foo'));
 
         $token->tag('bar', 5);
         $this->assertEquals(2, count($token->tags));
-        $this->assertInternalType('int', $token->getTag('bar'));
+        $this->assertIsInt($token->getTag('bar'));
 
         $token->untag('foo');
         $this->assertEquals(1, count($token->tags));
-        $this->assertInternalType('int', $token->getTag('bar'));
+        $this->assertIsInt($token->getTag('bar'));
     }
 
     public function testScanForDayNames()

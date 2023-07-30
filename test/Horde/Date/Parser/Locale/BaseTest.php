@@ -25,7 +25,7 @@ class Horde_Date_Parser_Locale_BaseTest extends Horde_Test_Case
     /**
      * Wed Aug 16 14:00:00 UTC 2006
      */
-    public function setUp()
+    public function setUp(): void
     {
         $this->now = new Horde_Date('2006-08-16 14:00:00');
         $this->parser = Horde_Date_Parser::factory(array('now' => $this->now));
@@ -721,6 +721,7 @@ class Horde_Date_Parser_Locale_BaseTest extends Horde_Test_Case
 
     public function testArgumentValidation()
     {
+        $this->expectNotToPerformAssertions();
         try {
             $this->parser->parse('may 27', array('foo' => 'bar'));
             $this->fail("Should throw InvalidArgumentException");

@@ -189,7 +189,6 @@
    <install as="Horde/Date/Parser/Locale/Pt/Timezone.php" name="lib/Horde/Date/Parser/Locale/Pt/Timezone.php" />
    <install as="Horde/Date/Parser/AllTests.php" name="test/Horde/Date/Parser/AllTests.php" />
    <install as="Horde/Date/Parser/bootstrap.php" name="test/Horde/Date/Parser/bootstrap.php" />
-   <install as="Horde/Date/Parser/HandlerTest.php" name="test/Horde/Date/Parser/HandlerTest.php" />
    <install as="Horde/Date/Parser/ParserTest.php" name="test/Horde/Date/Parser/ParserTest.php" />
    <install as="Horde/Date/Parser/ResultTest.php" name="test/Horde/Date/Parser/ResultTest.php" />
    <install as="Horde/Date/Parser/TokenTest.php" name="test/Horde/Date/Parser/TokenTest.php" />
