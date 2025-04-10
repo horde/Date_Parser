@@ -45,7 +45,7 @@ class Horde_Date_Parser_Locale_De extends Horde_Date_Parser_Locale_Base
         $text = preg_replace('/\b(vor|früher)\b/', 'past', $text);
         $text = preg_replace('/\b(?:in|during) the (morning)\b/', '\1', $text);
         $text = preg_replace('/\bam (morgen|nachmittag|abend)\b/', '\1', $text);
-        $text = preg_replace('/\in der nacht\b/', 'nachts', $text);
+        $text = preg_replace('/\bin der nacht\b/', 'nachts', $text);
         $text = $this->numericizeOrdinals($text);
 
         return $text;
