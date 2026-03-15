@@ -1,6 +1,7 @@
 <?php
+
 /**
- * Copyright 2008-2017 Horde LLC (http://www.horde.org/)
+ * Copyright 2008-2026 Horde LLC (http://www.horde.org/)
  *
  * See the enclosed file LICENSE for license information (LGPL). If you
  * did not receive this file, see http://www.horde.org/licenses/lgpl21.
@@ -45,18 +46,29 @@ class Horde_Date_Parser_Handler
         $tokenIndex = 0;
         foreach ($this->pattern as $name) {
             $optional = substr($name, -1) == '?';
-            if ($optional) { $name = rtrim($name, '?'); }
+            if ($optional) {
+                $name = rtrim($name, '?');
+            }
 
             $tag = substr($name, 0, 1) == ':';
             if ($tag) {
                 $name = substr($name, 1);
                 //match = tokens[token_index] && !tokens[token_index].tags.select { |o| o.kind_of?(klass) }.empty?
                 $match = isset($tokens[$tokenIndex]) && $tokens[$tokenIndex]->getTag($name);
-                if (!$match && !$optional) { return false; }
-                if ($match) { $tokenIndex++; continue; }
-                if (!$match && $optional) { continue; }
+                if (!$match && !$optional) {
+                    return false;
+                }
+                if ($match) {
+                    $tokenIndex++;
+                    continue;
+                }
+                if (!$match && $optional) {
+                    continue;
+                }
             } else {
-                if ($optional && $tokenIndex == count($tokens)) { return true; }
+                if ($optional && $tokenIndex == count($tokens)) {
+                    return true;
+                }
                 if (!isset($definitions[$name])) {
                     throw new Horde_Date_Parser_Exception("Invalid subset $name specified");
                 }
@@ -70,7 +82,9 @@ class Horde_Date_Parser_Handler
             }
         }
 
-        if ($tokenIndex != count($tokens)) { return false; }
+        if ($tokenIndex != count($tokens)) {
+            return false;
+        }
         return true;
     }
 

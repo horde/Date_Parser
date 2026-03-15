@@ -1,6 +1,7 @@
 <?php
+
 /**
- * Copyright 2008-2017 Horde LLC (http://www.horde.org/)
+ * Copyright 2008-2026 Horde LLC (http://www.horde.org/)
  *
  * See the enclosed file LICENSE for license information (LGPL). If you
  * did not receive this file, see http://www.horde.org/licenses/lgpl21.
@@ -25,7 +26,7 @@
 class Horde_Date_Parser_Result
 {
     public $span;
-    public $tokens = array();
+    public $tokens = [];
 
     public function __construct($span, $tokens)
     {
@@ -52,20 +53,32 @@ class Horde_Date_Parser_Result
     public function taggedText()
     {
         $taggedTokens = array_values(array_filter(
-            $this->tokens, function ($t) { return $t->tagged(); }
+            $this->tokens,
+            function ($t) {
+                return $t->tagged();
+            }
         ));
         return implode(
-            ' ', array_map(function ($t) { return $t->word; }, $taggedTokens)
+            ' ',
+            array_map(function ($t) {
+                return $t->word;
+            }, $taggedTokens)
         );
     }
 
     public function untaggedText()
     {
         $untaggedTokens = array_values(array_filter(
-            $this->tokens, function ($t) { return !$t->tagged(); }
+            $this->tokens,
+            function ($t) {
+                return !$t->tagged();
+            }
         ));
         return implode(
-            ' ', array_map(function ($t) { return $t->word; }, $untaggedTokens)
+            ' ',
+            array_map(function ($t) {
+                return $t->word;
+            }, $untaggedTokens)
         );
     }
 

@@ -1,6 +1,7 @@
 <?php
+
 /**
- * Copyright 2008-2017 Horde LLC (http://www.horde.org/)
+ * Copyright 2008-2026 Horde LLC (http://www.horde.org/)
  *
  * See the enclosed file LICENSE for license information (LGPL). If you
  * did not receive this file, see http://www.horde.org/licenses/lgpl21.
@@ -24,7 +25,7 @@
  */
 class Horde_Date_Parser_Locale_Base_Repeater
 {
-    public $monthNameScanner = array(
+    public $monthNameScanner = [
         '/^jan\.?(uary)?$/i' => 'january',
         '/^feb\.?(ruary)?$/i' => 'february',
         '/^mar\.?(ch)?$/i' => 'march',
@@ -37,9 +38,9 @@ class Horde_Date_Parser_Locale_Base_Repeater
         '/^oct\.?(ober)?$/i' => 'october',
         '/^nov\.?(ember)?$/i' => 'november',
         '/^dec\.?(ember)?$/i' => 'december',
-    );
+    ];
 
-    public $dayNameScanner = array(
+    public $dayNameScanner = [
         '/^m[ou]n(day)?$/i' => 'monday',
         '/^t(ue|eu|oo|u|)s(day)?$/i' => 'tuesday',
         '/^tue$/i' => 'tuesday',
@@ -50,18 +51,18 @@ class Horde_Date_Parser_Locale_Base_Repeater
         '/^fr[iy](day)?$/i' => 'friday',
         '/^sat(t?[ue]rday)?$/i' => 'saturday',
         '/^su[nm](day)?$/i' => 'sunday',
-    );
+    ];
 
-    public $dayPortionScanner = array(
+    public $dayPortionScanner = [
         '/^ams?$/i' => 'am',
         '/^pms?$/i' => 'pm',
         '/^mornings?$/i' => 'morning',
         '/^afternoons?$/i' => 'afternoon',
         '/^evenings?$/i' => 'evening',
         '/^(night|nite)s?$/i' => 'night',
-    );
+    ];
 
-    public $unitScanner = array(
+    public $unitScanner = [
         '/^years?$/i' => 'year',
         '/^seasons?$/i' => 'season',
         '/^months?$/i' => 'month',
@@ -72,7 +73,7 @@ class Horde_Date_Parser_Locale_Base_Repeater
         '/^hours?$/i' => 'hour',
         '/^minutes?$/i' => 'minute',
         '/^seconds?$/i' => 'second',
-    );
+    ];
 
     public $timeRegex = '/^\d{1,2}(:?\d{2})?([\.:]?\d{2})?$/';
 

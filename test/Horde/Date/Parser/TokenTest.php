@@ -1,18 +1,22 @@
 <?php
-/**
- * @category   Horde
- * @package    Date
- * @subpackage UnitTests
- */
-namespace Horde\Date\Parser;
-use Horde_Test_Case;
-use \Horde_Date_Parser;
-use \Horde_Date_Parser_Token;
 
 /**
  * @category   Horde
  * @package    Date
  * @subpackage UnitTests
+ */
+
+namespace Horde\Date\Parser;
+
+use Horde_Test_Case;
+use Horde_Date_Parser;
+use Horde_Date_Parser_Token;
+
+/**
+ * @category   Horde
+ * @package    Date
+ * @subpackage UnitTests
+ * @coversNothing
  */
 class TokenTest extends Horde_Test_Case
 {
@@ -55,14 +59,14 @@ class TokenTest extends Horde_Test_Case
 
     public function testScanForTz()
     {
-         $parser = Horde_Date_Parser::factory();
-         $tokenizer = $parser->componentFactory('Timezone');
-         $token = new Horde_Date_Parser_Token('test');
-         $results = $tokenizer->scan(array($token));
-         $this->assertEmpty($results[0]->getTag('timezone'));
+        $parser = Horde_Date_Parser::factory();
+        $tokenizer = $parser->componentFactory('Timezone');
+        $token = new Horde_Date_Parser_Token('test');
+        $results = $tokenizer->scan([$token]);
+        $this->assertEmpty($results[0]->getTag('timezone'));
 
-         $token = new Horde_Date_Parser_Token('EST');
-         $results = $tokenizer->scan(array($token));
-         $this->assertEquals('tz', $results[0]->getTag('timezone'));
+        $token = new Horde_Date_Parser_Token('EST');
+        $results = $tokenizer->scan([$token]);
+        $this->assertEquals('tz', $results[0]->getTag('timezone'));
     }
 }

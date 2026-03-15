@@ -1,6 +1,7 @@
 <?php
+
 /**
- * Copyright 2008-2017 Horde LLC (http://www.horde.org/)
+ * Copyright 2008-2026 Horde LLC (http://www.horde.org/)
  *
  * See the enclosed file LICENSE for license information (LGPL). If you
  * did not receive this file, see http://www.horde.org/licenses/lgpl21.
@@ -24,7 +25,7 @@
  */
 class Horde_Date_Parser
 {
-    public static function parse($text, $args = array())
+    public static function parse($text, $args = [])
     {
         $factoryArgs = $args;
         unset($args['locale']);
@@ -32,9 +33,9 @@ class Horde_Date_Parser
         return self::factory($factoryArgs)->parse($text, $args);
     }
 
-    public static function factory($args = array())
+    public static function factory($args = [])
     {
-        $locale = isset($args['locale']) ? $args['locale'] : null;
+        $locale = $args['locale'] ?? null;
         if ($locale && Horde_String::lower($locale) != 'base') {
             $locale = str_replace(' ', '_', Horde_String::ucwords(str_replace('_', ' ', Horde_String::lower($locale))));
             $class = 'Horde_Date_Parser_Locale_' . $locale;
@@ -60,7 +61,7 @@ class Horde_Date_Parser
     public static function getLocales()
     {
         $dir = __DIR__ . '/Parser/Locale';
-        $locales = array();
+        $locales = [];
         foreach (new DirectoryIterator($dir) as $f) {
             if ($f->isFile()) {
                 $locale = str_replace('.php', '', $f->getFilename());

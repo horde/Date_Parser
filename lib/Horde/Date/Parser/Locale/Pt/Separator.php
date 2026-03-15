@@ -1,6 +1,7 @@
 <?php
+
 /**
- * Copyright 2008-2017 Horde LLC (http://www.horde.org/)
+ * Copyright 2008-2026 Horde LLC (http://www.horde.org/)
  *
  * See the enclosed file LICENSE for license information (LGPL). If you
  * did not receive this file, see http://www.horde.org/licenses/lgpl21.
@@ -24,27 +25,26 @@
  */
 class Horde_Date_Parser_Locale_Pt_Separator extends Horde_Date_Parser_Locale_Base_Separator
 {
-
-    public $commaScanner = array(
+    public $commaScanner = [
         '/^,$/' => 'comma',
-    );
+    ];
 
-    public $slashOrDashScanner = array(
+    public $slashOrDashScanner = [
         '/^-$/' => 'dash',
         '/^\/$/' => 'slash',
-    );
+    ];
 
-    public $atScanner = array(
+    public $atScanner = [
         '/^(em|@|de)$/' => 'at',
-		'/^(as|ao)$/' => 'at',
-		'/^(at|@)$/' => 'at',
-    );
+        '/^(as|ao)$/' => 'at',
+        '/^(at|@)$/' => 'at',
+    ];
 
 
-    public $inScanner = array(
+    public $inScanner = [
         '/^no$/' => 'in',
-		'/^in$/' => 'in',
-    );
+        '/^in$/' => 'in',
+    ];
 
     public function scan($tokens)
     {

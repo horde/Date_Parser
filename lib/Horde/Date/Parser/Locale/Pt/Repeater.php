@@ -1,6 +1,7 @@
 <?php
+
 /**
- * Copyright 2008-2017 Horde LLC (http://www.horde.org/)
+ * Copyright 2008-2026 Horde LLC (http://www.horde.org/)
  *
  * See the enclosed file LICENSE for license information (LGPL). If you
  * did not receive this file, see http://www.horde.org/licenses/lgpl21.
@@ -24,67 +25,66 @@
  */
 class Horde_Date_Parser_Locale_Pt_Repeater extends Horde_Date_Parser_Locale_Base_Repeater
 {
-
-    public $monthNameScanner = array(
+    public $monthNameScanner = [
         '/^jan(eiro)?$/' => 'january',
         '/^fev(ereiro)?$/' => 'february',
         '/^mar(co)?$/' => 'march',
         '/^abr(il)?$/' => 'april',
         '/^mai(o)?$/' => 'may',
-        '/^jun(ho)?$/' => 'june',     
+        '/^jun(ho)?$/' => 'june',
         '/^jul(ho)?$/' => 'july',
-		'/^ago(sto)?$/' => 'august',
+        '/^ago(sto)?$/' => 'august',
         '/^set(embro)?$/' => 'september',
         '/^out(ubro)?$/' => 'october',
         '/^nov(embro)?$/' => 'november',
         '/^dez(embro)?$/' => 'december',
-    );
+    ];
 
-/*
-	public $monthNameScanner = array(
-        '/^jan(\.|eiro)?$/' => 'january',
-        '/^fev(\.|ereiro)?$/' => 'february',
-        '/^mar(\.|(co))?$/' => 'march',
-        '/^abr(\.|(il))?$/' => 'april',
-        '/^mai(\.|o)?$/' => 'may',
-        '/^jun(\.|ho)?$/' => 'june',
-        '/^jul(\.|ho)?$/' => 'july',
-        '/^ago(\.|sto)?$/' => 'august',
-        '/^set(\.|embro)?$/' => 'september',
-        '/^out(\.|ubro)?$/' => 'october',
-        '/^nov(\.|embro)?$/' => 'november',
-        '/^dez(\.|embro)?$/' => 'december',
-	);
-*/
+    /*
+        public $monthNameScanner = array(
+            '/^jan(\.|eiro)?$/' => 'january',
+            '/^fev(\.|ereiro)?$/' => 'february',
+            '/^mar(\.|(co))?$/' => 'march',
+            '/^abr(\.|(il))?$/' => 'april',
+            '/^mai(\.|o)?$/' => 'may',
+            '/^jun(\.|ho)?$/' => 'june',
+            '/^jul(\.|ho)?$/' => 'july',
+            '/^ago(\.|sto)?$/' => 'august',
+            '/^set(\.|embro)?$/' => 'september',
+            '/^out(\.|ubro)?$/' => 'october',
+            '/^nov(\.|embro)?$/' => 'november',
+            '/^dez(\.|embro)?$/' => 'december',
+        );
+    */
 
-    public $dayNameScanner = array(
-		'/^seg$/' => 'monday',
-		'/^ter$/' => 'tuesday',
-		'/^qua$/' => 'wednesday',
-		'/^qui$/' => 'thursday',
-	'/^sex$/' => 'friday',
-		'/^sab$/' => 'saturday',
-		'/^dom$/' => 'sunday',
-		'/^segunda$/' => 'monday',
-		'/^terca$/' => 'tuesday',
-		'/^quarta$/' => 'wednesday',
-	'/^quinta$/' => 'thursday',
-		'/^sexta$/' => 'friday',
-		'/^sab(ado)?$/' => 'saturday',
-	'/^dom(ingo)?$/' => 'sunday',
-    );
+    public $dayNameScanner = [
+        '/^seg$/' => 'monday',
+        '/^ter$/' => 'tuesday',
+        '/^qua$/' => 'wednesday',
+        '/^qui$/' => 'thursday',
+        '/^sex$/' => 'friday',
+        '/^sab$/' => 'saturday',
+        '/^dom$/' => 'sunday',
+        '/^segunda$/' => 'monday',
+        '/^terca$/' => 'tuesday',
+        '/^quarta$/' => 'wednesday',
+        '/^quinta$/' => 'thursday',
+        '/^sexta$/' => 'friday',
+        '/^sab(ado)?$/' => 'saturday',
+        '/^dom(ingo)?$/' => 'sunday',
+    ];
 
-/*
-        '/^seg((unda)?(\s|\-)feira)?$/' => 'monday',
-        '/^ter(([cç]a)?(\s|\-)feira)?$/' => 'tuesday',
-     	'/^qua((rta)?(\s|\-)feira)?$/' => 'wednesday',
-        '/^qui((nta)?([ \-]feira)?)?$/' => 'thursday',
-        '/^quinta-feira$/' => 'thursday',
-		'/^sex((ta)?(\s|\-)feira)?$/' => 'friday',
+    /*
+            '/^seg((unda)?(\s|\-)feira)?$/' => 'monday',
+            '/^ter(([cç]a)?(\s|\-)feira)?$/' => 'tuesday',
+             '/^qua((rta)?(\s|\-)feira)?$/' => 'wednesday',
+            '/^qui((nta)?([ \-]feira)?)?$/' => 'thursday',
+            '/^quinta-feira$/' => 'thursday',
+            '/^sex((ta)?(\s|\-)feira)?$/' => 'friday',
 
-*/
-// scalar timeSignifiers?
-    public $dayPortionScanner = array(
+    */
+    // scalar timeSignifiers?
+    public $dayPortionScanner = [
         '/^(\d*)\s?ams?$/' => 'am',
         '/^(\d*)\s?pms?$/' => 'pm',
         '/^(?:de|na|a|durante\s+a) (manh[aã]|madrugada)$/' => 'morning',
@@ -92,15 +92,15 @@ class Horde_Date_Parser_Locale_Pt_Repeater extends Horde_Date_Parser_Locale_Base
         '/^((fim\s(d[ea]\s)tarde)|anoitecer)$/' => 'evening',
         '/^noite$/' => 'night',
         '/^ams?$/' => 'am',
-	    '/^pms?$/' => 'pm',
-	    '/^mornings?$/' => 'morning',
-	    '/^afternoons?$/' => 'afternoon',
-	    '/^evenings?$/' => 'evening',
-	    '/^(night|nite)s?$/' => 'night',
-		//'/^horas?$/' => 'hour',				// hour: add Repeater dayPortion (JPC)
-	);
+        '/^pms?$/' => 'pm',
+        '/^mornings?$/' => 'morning',
+        '/^afternoons?$/' => 'afternoon',
+        '/^evenings?$/' => 'evening',
+        '/^(night|nite)s?$/' => 'night',
+        //'/^horas?$/' => 'hour',				// hour: add Repeater dayPortion (JPC)
+    ];
 
-    public $unitScanner = array(
+    public $unitScanner = [
         '/^anos?$/' => 'year',
         '/^(estacao|epoca)$/' => 'season',
         '/^mes$/' => 'month',
@@ -121,11 +121,11 @@ class Horde_Date_Parser_Locale_Pt_Repeater extends Horde_Date_Parser_Locale_Base
         '/^hours?$/' => 'hour',
         '/^minutes?$/' => 'minute',
         '/^seconds?$/' => 'second',
-    );
+    ];
 
     public $timeRegex = '/^\d{1,2}(:?\d{2})?([\.:]?\d{2})?$/';
-	// 24h format
-	//public $timeRegex = '/^([01]?[0-9]|2[0-3])(:?([0-5][0-9]))?([\.:]?([0-5][0-9]))?$/';
+    // 24h format
+    //public $timeRegex = '/^([01]?[0-9]|2[0-3])(:?([0-5][0-9]))?([\.:]?([0-5][0-9]))?$/';
 
     public function scan($tokens, $options)
     {

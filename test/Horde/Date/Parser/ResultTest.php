@@ -1,19 +1,23 @@
 <?php
-/**
- * @category   Horde
- * @package    Date
- * @subpackage UnitTests
- */
-namespace Horde\Date\Parser;
-use Horde_Test_Case;
-use \Horde_Date_Parser_Result;
-use \Horde_Date_Span;
-use \Horde_Date;
 
 /**
  * @category   Horde
  * @package    Date
  * @subpackage UnitTests
+ */
+
+namespace Horde\Date\Parser;
+
+use Horde_Test_Case;
+use Horde_Date_Parser_Result;
+use Horde_Date_Span;
+use Horde_Date;
+
+/**
+ * @category   Horde
+ * @package    Date
+ * @subpackage UnitTests
+ * @coversNothing
  */
 class ResultTest extends Horde_Test_Case
 {

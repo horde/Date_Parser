@@ -1,19 +1,23 @@
 <?php
-/**
- * @category   Horde
- * @package    Date
- * @subpackage UnitTests
- */
-namespace Horde\Date\Parser\Locale;
-use Horde_Test_Case;
-use \Horde_Date;
-use \Horde_Date_Parser;
-use \Horde_Date_Span;
 
 /**
  * @category   Horde
  * @package    Date
  * @subpackage UnitTests
+ */
+
+namespace Horde\Date\Parser\Locale;
+
+use Horde_Test_Case;
+use Horde_Date;
+use Horde_Date_Parser;
+use Horde_Date_Span;
+
+/**
+ * @category   Horde
+ * @package    Date
+ * @subpackage UnitTests
+ * @coversNothing
  */
 class BaseTest extends Horde_Test_Case
 {
@@ -33,68 +37,68 @@ class BaseTest extends Horde_Test_Case
     public function setUp(): void
     {
         $this->now = new Horde_Date('2006-08-16 14:00:00');
-        $this->parser = Horde_Date_Parser::factory(array('now' => $this->now));
+        $this->parser = Horde_Date_Parser::factory(['now' => $this->now]);
     }
 
     public function testTodayAt11()
     {
-        $this->assertEquals('2006-08-16 11:00:00', (string)$this->parser->parse('today at 11'));
+        $this->assertEquals('2006-08-16 11:00:00', (string) $this->parser->parse('today at 11'));
     }
 
     public function testTomorrow()
     {
-        $this->assertEquals('2006-08-17 12:00:00', (string)$this->parser->parse('tomorrow'));
+        $this->assertEquals('2006-08-17 12:00:00', (string) $this->parser->parse('tomorrow'));
     }
 
     public function testMay27()
     {
-        $this->assertEquals('2007-05-27 12:00:00', (string)$this->parser->parse('may 27'));
+        $this->assertEquals('2007-05-27 12:00:00', (string) $this->parser->parse('may 27'));
     }
 
     public function testThursday()
     {
-        $this->assertEquals('2006-08-17 12:00:00', (string)$this->parser->parse('thursday'));
+        $this->assertEquals('2006-08-17 12:00:00', (string) $this->parser->parse('thursday'));
     }
 
     public function testNextMonth()
     {
-        $this->assertEquals('2006-09-16 00:00:00', (string)$this->parser->parse('next month'));
+        $this->assertEquals('2006-09-16 00:00:00', (string) $this->parser->parse('next month'));
     }
 
     public function testLastWeekTuesday()
     {
-        $this->assertEquals('2006-08-08 12:00:00', (string)$this->parser->parse('last week tuesday'));
+        $this->assertEquals('2006-08-08 12:00:00', (string) $this->parser->parse('last week tuesday'));
     }
 
     public function test3YearsAgo()
     {
-        $this->assertEquals('2003-08-16 14:00:00', (string)$this->parser->parse('3 years ago'));
-        $this->assertEquals('2003-08-16 14:00:00', (string)$this->parser->parse('three years ago'));
+        $this->assertEquals('2003-08-16 14:00:00', (string) $this->parser->parse('3 years ago'));
+        $this->assertEquals('2003-08-16 14:00:00', (string) $this->parser->parse('three years ago'));
     }
 
     public function test6InTheMorning()
     {
-        $this->assertEquals('2006-08-16 06:00:00', (string)$this->parser->parse('6 in the morning'));
+        $this->assertEquals('2006-08-16 06:00:00', (string) $this->parser->parse('6 in the morning'));
     }
 
     public function testAfternoonYesterday()
     {
-        $this->assertEquals('2006-08-15 15:00:00', (string)$this->parser->parse('afternoon yesterday'));
+        $this->assertEquals('2006-08-15 15:00:00', (string) $this->parser->parse('afternoon yesterday'));
     }
 
     public function test3rdWednesdayInNovember()
     {
-        $this->assertEquals('2006-11-15 12:00:00', (string)$this->parser->parse('3rd wednesday in november'));
+        $this->assertEquals('2006-11-15 12:00:00', (string) $this->parser->parse('3rd wednesday in november'));
     }
 
     public function test4thDayLastWeek()
     {
-        $this->assertEquals('2006-08-09 12:00:00', (string)$this->parser->parse('4th day last week'));
+        $this->assertEquals('2006-08-09 12:00:00', (string) $this->parser->parse('4th day last week'));
     }
 
     public function testTwoMonthsAgoThisFriday()
     {
-        $this->assertEquals('2006-06-18 12:00:00', (string)$this->parser->parse('two months ago this friday'));
+        $this->assertEquals('2006-06-18 12:00:00', (string) $this->parser->parse('two months ago this friday'));
     }
 
     public function testParseGuessDates_rm_sd()
@@ -102,16 +106,16 @@ class BaseTest extends Horde_Test_Case
         $time = $this->parser->parse("may 27");
         $this->assertEquals(new Horde_Date('2007-05-27 12:00:00'), $time);
 
-        $time = $this->parser->parse("may 28", array('context' => 'past'));
+        $time = $this->parser->parse("may 28", ['context' => 'past']);
         $this->assertEquals(new Horde_Date('2006-05-28 12:00:00'), $time);
 
-        $time = $this->parser->parse("may 28 5pm", array('context' => 'past'));
+        $time = $this->parser->parse("may 28 5pm", ['context' => 'past']);
         $this->assertEquals(new Horde_Date('2006-05-28 17:00:00'), $time);
 
-        $time = $this->parser->parse("may 28 at 5pm", array('context' => 'past'));
+        $time = $this->parser->parse("may 28 at 5pm", ['context' => 'past']);
         $this->assertEquals(new Horde_Date('2006-05-28 17:00:00'), $time);
 
-        $time = $this->parser->parse("may 28 at 5:32.19pm", array('context' => 'past'));
+        $time = $this->parser->parse("may 28 at 5:32.19pm", ['context' => 'past']);
         $this->assertEquals(new Horde_Date('2006-05-28 17:32:19'), $time);
     }
 
@@ -120,16 +124,16 @@ class BaseTest extends Horde_Test_Case
         $time = $this->parser->parse("may 27th");
         $this->assertEquals(new Horde_Date('2007-05-27 12:00:00'), $time);
 
-        $time = $this->parser->parse("may 27th", array('context' => 'past'));
+        $time = $this->parser->parse("may 27th", ['context' => 'past']);
         $this->assertEquals(new Horde_Date('2006-05-27 12:00:00'), $time);
 
-        $time = $this->parser->parse("may 27th 5:00 pm", array('context' => 'past'));
+        $time = $this->parser->parse("may 27th 5:00 pm", ['context' => 'past']);
         $this->assertEquals(new Horde_Date('2006-05-27 17:00:00'), $time);
 
-        $time = $this->parser->parse("may 27th at 5pm", array('context' => 'past'));
+        $time = $this->parser->parse("may 27th at 5pm", ['context' => 'past']);
         $this->assertEquals(new Horde_Date('2006-05-27 17:00:00'), $time);
 
-        $time = $this->parser->parse("may 27th at 5", array('ambiguousTimeRange' => 'none'));
+        $time = $this->parser->parse("may 27th at 5", ['ambiguousTimeRange' => 'none']);
         $this->assertEquals(new Horde_Date('2007-05-27 05:00:00'), $time);
     }
 
@@ -153,7 +157,7 @@ class BaseTest extends Horde_Test_Case
         $time = $this->parser->parse("jan 3 2010 at midnight");
         $this->assertEquals(new Horde_Date('2010-01-04 00:00:00'), $time);
 
-        $time = $this->parser->parse("jan 3 2010 at 4", array('ambiguousTimeRange' => 'none'));
+        $time = $this->parser->parse("jan 3 2010 at 4", ['ambiguousTimeRange' => 'none']);
         $this->assertEquals(new Horde_Date('2010-01-03 04:00:00'), $time);
 
         $time = $this->parser->parse("may 27 79");
@@ -162,7 +166,7 @@ class BaseTest extends Horde_Test_Case
         $time = $this->parser->parse("may 27 79 4:30");
         $this->assertEquals(new Horde_Date('1979-05-27 16:30:00'), $time);
 
-        $time = $this->parser->parse("may 27 79 at 4:30", array('ambiguousTimeRange' => 'none'));
+        $time = $this->parser->parse("may 27 79 at 4:30", ['ambiguousTimeRange' => 'none']);
         $this->assertEquals(new Horde_Date('1979-05-27 04:30:00'), $time);
 
         $time = $this->parser->parse("January 12, '00");
@@ -239,8 +243,8 @@ class BaseTest extends Horde_Test_Case
         $this->assertEquals(new Horde_Date('2007-04-02 17:00:00'), $time);
 
         $now = new Horde_Date(time());
-        $time = $this->parser->parse((string)$now);
-        $this->assertEquals((string)$now, (string)$time);
+        $time = $this->parser->parse((string) $now);
+        $this->assertEquals((string) $now, (string) $time);
     }
 
     public function testParseGuessDates_rm_sd_rt()
@@ -272,7 +276,7 @@ class BaseTest extends Horde_Test_Case
         $time = $this->parser->parse("5");
         $this->assertEquals(new Horde_Date('2006-08-16 17:00:00'), $time);
 
-        $time = $this->parser->parse('5', array('now' => new Horde_Date('2006-08-16 03:00:00'), 'ambiguousTimeRange' => 'none'));
+        $time = $this->parser->parse('5', ['now' => new Horde_Date('2006-08-16 03:00:00'), 'ambiguousTimeRange' => 'none']);
         $this->assertEquals(new Horde_Date('2006-08-16 05:00:00'), $time);
 
         $time = $this->parser->parse("13:00");
@@ -293,16 +297,16 @@ class BaseTest extends Horde_Test_Case
         $time = $this->parser->parse("monday 4:00");
         $this->assertEquals(new Horde_Date(2006, 8, 21, 16), $time);
 
-        $time = $this->parser->parse("sat 4:00", array('ambiguousTimeRange' => 'none'));
+        $time = $this->parser->parse("sat 4:00", ['ambiguousTimeRange' => 'none']);
         $this->assertEquals(new Horde_Date(2006, 8, 19, 4), $time);
 
-        $time = $this->parser->parse("sunday 4:20", array('ambiguousTimeRange' => 'none'));
+        $time = $this->parser->parse("sunday 4:20", ['ambiguousTimeRange' => 'none']);
         $this->assertEquals(new Horde_Date(2006, 8, 20, 4, 20), $time);
 
         $time = $this->parser->parse("4 pm");
         $this->assertEquals(new Horde_Date(2006, 8, 16, 16), $time);
 
-        $time = $this->parser->parse("4 am", array('ambiguousTimeRange' => 'none'));
+        $time = $this->parser->parse("4 am", ['ambiguousTimeRange' => 'none']);
         $this->assertEquals(new Horde_Date(2006, 8, 16, 4), $time);
 
         $time = $this->parser->parse("12 pm");
@@ -351,7 +355,7 @@ class BaseTest extends Horde_Test_Case
         $time = $this->parser->parse("this year");
         $this->assertEquals(new Horde_Date(2006, 10, 24, 12, 30), $time);
 
-        $span = $this->parser->parse("this year", array('context' => 'past', 'return' => 'span'));
+        $span = $this->parser->parse("this year", ['context' => 'past', 'return' => 'span']);
         $this->assertEquals(new Horde_Date_Span('2006-01-01 00:00:00', '2006-08-16 00:00:00'), $span);
     }
 
@@ -360,10 +364,10 @@ class BaseTest extends Horde_Test_Case
         $time = $this->parser->parse("this month");
         $this->assertEquals(new Horde_Date(2006, 8, 24, 12), $time);
 
-        $time = $this->parser->parse("this month", array('context' => 'past'));
+        $time = $this->parser->parse("this month", ['context' => 'past']);
         $this->assertEquals(new Horde_Date(2006, 8, 8, 12), $time);
 
-        $time = $this->parser->parse("next month", array('now' => new Horde_Date(2006, 11, 15)));
+        $time = $this->parser->parse("next month", ['now' => new Horde_Date(2006, 11, 15)]);
         $this->assertEquals(new Horde_Date(2006, 12, 16, 12), $time);
     }
 
@@ -378,7 +382,7 @@ class BaseTest extends Horde_Test_Case
         $time = $this->parser->parse("this fortnight");
         $this->assertEquals(new Horde_Date(2006, 8, 21, 19, 30), $time);
 
-        $time = $this->parser->parse("this fortnight", array('context' => 'past'));
+        $time = $this->parser->parse("this fortnight", ['context' => 'past']);
         $this->assertEquals(new Horde_Date(2006, 8, 14, 19), $time);
     }
 
@@ -387,7 +391,7 @@ class BaseTest extends Horde_Test_Case
         $time = $this->parser->parse("this week");
         $this->assertEquals(new Horde_Date(2006, 8, 18, 7, 30), $time);
 
-        $time = $this->parser->parse("this week", array('context' => 'past'));
+        $time = $this->parser->parse("this week", ['context' => 'past']);
         $this->assertEquals(new Horde_Date(2006, 8, 14, 19), $time);
     }
 
@@ -396,7 +400,7 @@ class BaseTest extends Horde_Test_Case
         $time = $this->parser->parse("this weekend");
         $this->assertEquals(new Horde_Date(2006, 8, 20), $time);
 
-        $time = $this->parser->parse("this weekend", array('context' => 'past'));
+        $time = $this->parser->parse("this weekend", ['context' => 'past']);
         $this->assertEquals(new Horde_Date(2006, 8, 13), $time);
 
         $time = $this->parser->parse("last weekend");
@@ -408,7 +412,7 @@ class BaseTest extends Horde_Test_Case
         $time = $this->parser->parse("this day");
         $this->assertEquals(new Horde_Date(2006, 8, 16, 19, 30), $time);
 
-        $time = $this->parser->parse("this day", array('context' => 'past'));
+        $time = $this->parser->parse("this day", ['context' => 'past']);
         $this->assertEquals(new Horde_Date(2006, 8, 16, 7), $time);
 
         $time = $this->parser->parse("today");
@@ -462,7 +466,7 @@ class BaseTest extends Horde_Test_Case
         $time = $this->parser->parse("this second");
         $this->assertEquals(new Horde_Date(2006, 8, 16, 14), $time);
 
-        $time = $this->parser->parse("this second", array('context' => 'past'));
+        $time = $this->parser->parse("this second", ['context' => 'past']);
         $this->assertEquals(new Horde_Date(2006, 8, 16, 14), $time);
 
         $time = $this->parser->parse("next second");
@@ -489,7 +493,7 @@ class BaseTest extends Horde_Test_Case
         $time = $this->parser->parse("tomorrow at 0900");
         $this->assertEquals(new Horde_Date(2006, 8, 17, 9), $time);
 
-        $time = $this->parser->parse("yesterday at 4:00", array('ambiguousTimeRange' => 'none'));
+        $time = $this->parser->parse("yesterday at 4:00", ['ambiguousTimeRange' => 'none']);
         $this->assertEquals(new Horde_Date(2006, 8, 15, 4), $time);
 
         $time = $this->parser->parse("last friday at 4:00");
@@ -535,7 +539,7 @@ class BaseTest extends Horde_Test_Case
         $this->assertEquals(new Horde_Date(2006, 8, 17, 5, 30), $time);
 
         $time = $this->parser->parse("next monday at 12:01 am");
-        $this->assertEquals(new Horde_Date(2006, 8, 21, 00, 1), $time);
+        $this->assertEquals(new Horde_Date(2006, 8, 21, 0o0, 1), $time);
 
         $time = $this->parser->parse("next monday at 12:01 pm");
         $this->assertEquals(new Horde_Date(2006, 8, 21, 12, 1), $time);
@@ -625,7 +629,7 @@ class BaseTest extends Horde_Test_Case
         $time = $this->parser->parse("20 seconds from now");
         $this->assertEquals(new Horde_Date(2006, 8, 16, 14, 0, 20), $time);
 
-        $time = $this->parser->parse("2 months ago", array('now' => new Horde_Date('2007-03-07 23:30')));
+        $time = $this->parser->parse("2 months ago", ['now' => new Horde_Date('2007-03-07 23:30')]);
         $this->assertEquals(new Horde_Date(2007, 1, 7, 23, 30), $time);
     }
 
@@ -673,7 +677,7 @@ class BaseTest extends Horde_Test_Case
 
     public function testParseGuess_o_r_g_r()
     {
-        $span = $this->parser->parse("3rd month next year", array('return' => 'span'));
+        $span = $this->parser->parse("3rd month next year", ['return' => 'span']);
         $this->assertEquals(new Horde_Date_Span('2007-03-01 00:00:00', '2007-04-01 00:00:00'), $span);
 
         $time = $this->parser->parse("3rd thursday this september");
@@ -691,15 +695,15 @@ class BaseTest extends Horde_Test_Case
 
     public function testParseSpan()
     {
-        $span = $this->parser->parse('friday', array('return' => 'span'));
+        $span = $this->parser->parse('friday', ['return' => 'span']);
         $this->assertEquals(new Horde_Date(2006, 8, 18), $span->begin);
         $this->assertEquals(new Horde_Date(2006, 8, 19), $span->end);
 
-        $span = $this->parser->parse('november', array('return' => 'span'));
+        $span = $this->parser->parse('november', ['return' => 'span']);
         $this->assertEquals(new Horde_Date(2006, 11, 1), $span->begin);
         $this->assertEquals(new Horde_Date(2006, 12, 1), $span->end);
 
-        $span = $this->parser->parse('weekend', array('return' => 'span'));
+        $span = $this->parser->parse('weekend', ['return' => 'span']);
         $this->assertEquals(new Horde_Date(2006, 8, 19), $span->begin);
         $this->assertEquals(new Horde_Date(2006, 8, 21), $span->end);
     }
@@ -728,7 +732,7 @@ class BaseTest extends Horde_Test_Case
     {
         $this->expectException('InvalidArgumentException');
 
-        $this->parser->parse('may 27', array('foo' => 'bar'));
-        $this->parser->parse('may 27', array('context' => 'bar'));
+        $this->parser->parse('may 27', ['foo' => 'bar']);
+        $this->parser->parse('may 27', ['context' => 'bar']);
     }
 }

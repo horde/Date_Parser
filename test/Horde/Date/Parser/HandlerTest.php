@@ -1,17 +1,21 @@
 <?php
-/**
- * @category   Horde
- * @package    Date
- * @subpackage UnitTests
- */
-namespace Horde\Date\Parser;
-use Horde_Test_Case;
-use \Horde_Date;
 
 /**
  * @category   Horde
  * @package    Date
  * @subpackage UnitTests
+ */
+
+namespace Horde\Date\Parser;
+
+use Horde_Test_Case;
+use Horde_Date;
+
+/**
+ * @category   Horde
+ * @package    Date
+ * @subpackage UnitTests
+ * @coversNothing
  */
 class HandlerTest extends Horde_Test_Case
 {

@@ -1,6 +1,7 @@
 <?php
+
 /**
- * Copyright 2008-2017 Horde LLC (http://www.horde.org/)
+ * Copyright 2008-2026 Horde LLC (http://www.horde.org/)
  *
  * See the enclosed file LICENSE for license information (LGPL). If you
  * did not receive this file, see http://www.horde.org/licenses/lgpl21.
@@ -64,19 +65,22 @@ class Horde_Date_Parser_Locale_De extends Horde_Date_Parser_Locale_Base
         $tokens = parent::postTokenize($tokens);
         // Catch ambiguous constructs like "heute morgen/morgen früh".
         foreach ($tokens as $num => $token) {
-            if ($num >= 2 &&
-                ($repeater = $token->getTag('repeater')) &&
-                $repeater instanceof Horde_Date_Repeater_Day &&
-                ($grabber = $tokens[$num - 1]->getTag('grabber')) &&
-                $grabber == 'next') {
+            if ($num >= 2
+                && ($repeater = $token->getTag('repeater'))
+                && $repeater instanceof Horde_Date_Repeater_Day
+                && ($grabber = $tokens[$num - 1]->getTag('grabber'))
+                && $grabber == 'next') {
                 $token = new Horde_Date_Parser_Token('');
-                $token->tag('repeater_day_portion',
-                            new Horde_Date_Repeater_DayPortion('morning'));
+                $token->tag(
+                    'repeater_day_portion',
+                    new Horde_Date_Repeater_DayPortion('morning')
+                );
                 array_splice(
                     $tokens,
                     $num - 1,
                     2,
-                    array($token));
+                    [$token]
+                );
                 return $tokens;
             }
         }

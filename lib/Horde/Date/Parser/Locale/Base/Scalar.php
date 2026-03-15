@@ -1,6 +1,7 @@
 <?php
+
 /**
- * Copyright 2008-2017 Horde LLC (http://www.horde.org/)
+ * Copyright 2008-2026 Horde LLC (http://www.horde.org/)
  *
  * See the enclosed file LICENSE for license information (LGPL). If you
  * did not receive this file, see http://www.horde.org/licenses/lgpl21.
@@ -28,7 +29,7 @@ class Horde_Date_Parser_Locale_Base_Scalar
     public $dayRegex = '/^\d\d?$/';
     public $monthRegex = '/^\d\d?$/';
     public $yearRegex = '/^([1-9]\d)?\d\d?$/';
-    public $timeSignifiers = array('am', 'pm', 'morning', 'afternoon', 'evening', 'night');
+    public $timeSignifiers = ['am', 'pm', 'morning', 'afternoon', 'evening', 'night'];
 
     public function scan($tokens)
     {

@@ -1,6 +1,7 @@
 <?php
+
 /**
- * Copyright 2008-2017 Horde LLC (http://www.horde.org/)
+ * Copyright 2008-2026 Horde LLC (http://www.horde.org/)
  *
  * See the enclosed file LICENSE for license information (LGPL). If you
  * did not receive this file, see http://www.horde.org/licenses/lgpl21.
@@ -44,7 +45,7 @@ class Horde_Date_Parser_Locale_Base_Ordinal
     public function scanForOrdinals($token)
     {
         if (preg_match($this->ordinalRegex, $token->word, $matches)) {
-            return (int)$matches[1];
+            return (int) $matches[1];
         }
     }
 
@@ -52,7 +53,7 @@ class Horde_Date_Parser_Locale_Base_Ordinal
     {
         if (preg_match($this->ordinalDayRegex, $token->word, $matches)) {
             if ($matches[1] <= 31) {
-                return (int)$matches[1];
+                return (int) $matches[1];
             }
         }
     }

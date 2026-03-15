@@ -1,6 +1,7 @@
 <?php
+
 /**
- * Copyright 2008-2017 Horde LLC (http://www.horde.org/)
+ * Copyright 2008-2026 Horde LLC (http://www.horde.org/)
  *
  * See the enclosed file LICENSE for license information (LGPL). If you
  * did not receive this file, see http://www.horde.org/licenses/lgpl21.
@@ -30,7 +31,7 @@ class Horde_Date_Parser_Token
     public function __construct($word)
     {
         $this->word = $word;
-        $this->tags = array();
+        $this->tags = [];
     }
 
     /**
@@ -38,7 +39,7 @@ class Horde_Date_Parser_Token
      */
     public function tag($tagClass, $tag)
     {
-        $this->tags[] = array($tagClass, $tag);
+        $this->tags[] = [$tagClass, $tag];
     }
 
     /**
@@ -82,7 +83,7 @@ class Horde_Date_Parser_Token
      */
     public function __toString()
     {
-        $tags = array();
+        $tags = [];
         foreach ($this->tags as $t) {
             $tags[] = implode(': ', $t);
         }

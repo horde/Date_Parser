@@ -1,6 +1,7 @@
 <?php
+
 /**
- * Copyright 2008-2017 Horde LLC (http://www.horde.org/)
+ * Copyright 2008-2026 Horde LLC (http://www.horde.org/)
  *
  * See the enclosed file LICENSE for license information (LGPL). If you
  * did not receive this file, see http://www.horde.org/licenses/lgpl21.
@@ -24,14 +25,14 @@
  */
 class Horde_Date_Parser_Locale_Pt_Ordinal extends Horde_Date_Parser_Locale_Base_Ordinal
 {
-/*
-    public $ordinalRegex = '/^(\d*)(\.|\xBA|\xAA|º|ª|st|nd|rd|th)?$/';
-    public $ordinalDayRegex = '/^(0[1-9]|[12][0-9]|3[01])(\.|\xBA|\xAA|º|ª|st|nd|rd|th)?$/';
-    public $ordinalMonthsRegex = '/^(0[1-9]|1[012])(\.|\xBA|\xAA|º|ª|st|nd|rd|th)?$/';
-*/
+    /*
+        public $ordinalRegex = '/^(\d*)(\.|\xBA|\xAA|º|ª|st|nd|rd|th)?$/';
+        public $ordinalDayRegex = '/^(0[1-9]|[12][0-9]|3[01])(\.|\xBA|\xAA|º|ª|st|nd|rd|th)?$/';
+        public $ordinalMonthsRegex = '/^(0[1-9]|1[012])(\.|\xBA|\xAA|º|ª|st|nd|rd|th)?$/';
+    */
     public $ordinalRegex = '/^(\d*)(st|nd|rd|th)$/';
-	public $ordinalDayRegex = '/^(\d*)(st|nd|rd|th)$/';
-	public $ordinalMonthsRegex = '/^(\d*)(st|nd|rd|th)$/';
+    public $ordinalDayRegex = '/^(\d*)(st|nd|rd|th)$/';
+    public $ordinalMonthsRegex = '/^(\d*)(st|nd|rd|th)$/';
 
 
     public function scan($tokens)
@@ -54,7 +55,7 @@ class Horde_Date_Parser_Locale_Pt_Ordinal extends Horde_Date_Parser_Locale_Base_
     public function scanForOrdinals($token)
     {
         if (preg_match($this->ordinalRegex, $token->word, $matches)) {
-            return (int)$matches[1];
+            return (int) $matches[1];
         }
     }
 
@@ -62,7 +63,7 @@ class Horde_Date_Parser_Locale_Pt_Ordinal extends Horde_Date_Parser_Locale_Base_
     {
         if (preg_match($this->ordinalDayRegex, $token->word, $matches)) {
             if ($matches[1] <= 31) {
-                return (int)$matches[1];
+                return (int) $matches[1];
             }
         }
     }
@@ -71,7 +72,7 @@ class Horde_Date_Parser_Locale_Pt_Ordinal extends Horde_Date_Parser_Locale_Base_
     {
         if (preg_match($this->ordinalMonthsRegex, $token->word, $matches)) {
             if ($matches[1] <= 12) {
-                return (int)$matches[1];
+                return (int) $matches[1];
             }
         }
     }

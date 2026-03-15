@@ -1,6 +1,7 @@
 <?php
+
 /**
- * Copyright 2008-2017 Horde LLC (http://www.horde.org/)
+ * Copyright 2008-2026 Horde LLC (http://www.horde.org/)
  *
  * See the enclosed file LICENSE for license information (LGPL). If you
  * did not receive this file, see http://www.horde.org/licenses/lgpl21.
@@ -24,21 +25,21 @@
  */
 class Horde_Date_Parser_Locale_Pt_Scalar extends Horde_Date_Parser_Locale_Base_Scalar
 {
-/*
+    /*
+        public $scalarRegex = '/^\d*$/';
+        public $dayRegex = '/^(0[1-9]|[12][0-9]|3[01])$/';
+        public $monthRegex = '/^(0[1-9]|1[012])$/';
+        // public $yearRegex = '/^(19|20)?\d\d$/';
+        public $yearRegex = '/^(19|20)?[0-9]{2}$/';
+        // public $timeSignifiers = array('manha', 'manhã', 'tarde', 'noite', 'madrugada', 'anoitecer');
+        // public $timeSignifiers = array('am', 'pm', 'morning', 'afternoon', 'evening', 'night', 'hour');		// hour: add Repeater dayPortion (JPC)
+        public $timeSignifiers = array('am', 'pm', 'morning', 'afternoon', 'evening', 'night');
+    */
     public $scalarRegex = '/^\d*$/';
-    public $dayRegex = '/^(0[1-9]|[12][0-9]|3[01])$/';
-    public $monthRegex = '/^(0[1-9]|1[012])$/';
-    // public $yearRegex = '/^(19|20)?\d\d$/';
-	public $yearRegex = '/^(19|20)?[0-9]{2}$/';
-    // public $timeSignifiers = array('manha', 'manhã', 'tarde', 'noite', 'madrugada', 'anoitecer');
-	// public $timeSignifiers = array('am', 'pm', 'morning', 'afternoon', 'evening', 'night', 'hour');		// hour: add Repeater dayPortion (JPC)
-	public $timeSignifiers = array('am', 'pm', 'morning', 'afternoon', 'evening', 'night');
-*/
-    public $scalarRegex = '/^\d*$/';
-	public $dayRegex = '/^\d\d?$/';
-	public $monthRegex = '/^\d\d?$/';
-	public $yearRegex = '/^([1-9]\d)?\d\d?$/';
-	public $timeSignifiers = array('am', 'pm', 'morning', 'afternoon', 'evening', 'night');
+    public $dayRegex = '/^\d\d?$/';
+    public $monthRegex = '/^\d\d?$/';
+    public $yearRegex = '/^([1-9]\d)?\d\d?$/';
+    public $timeSignifiers = ['am', 'pm', 'morning', 'afternoon', 'evening', 'night'];
 
     public function scan($tokens)
     {
